@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">747746072307-0mp33cr8pv64603oc51s0qs0f33rmtj0.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">747746072307</string>
+    <string name="google_api_key" translatable="false">AIzaSyC_vAKDyYI82KGTXJja55R_m6T4ROQomPc</string>
+    <string name="google_app_id" translatable="false">1:747746072307:android:73d04f56d4b8448930c986</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC_vAKDyYI82KGTXJja55R_m6T4ROQomPc</string>
+    <string name="google_storage_bucket" translatable="false">onlinelesson-c7830.appspot.com</string>
+    <string name="project_id" translatable="false">onlinelesson-c7830</string>
+</resources>
