@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_design/Login/show_dialog.dart';
 import 'package:flutter_design/Login/splash_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -96,6 +97,8 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
+          showLoaderDialog1(context);
+
           /// asagida pushReplacement kullandik cunku home secreen e gittigimizde geri donus butonunun olmasini istemiyoruz.
           signIn(emailController.text, passwordController.text);
         },

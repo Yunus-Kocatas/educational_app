@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_design/home_page.dart';
+import 'package:flutter_design/Login/home_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Animations/FadeAnimation.dart';
@@ -70,14 +70,16 @@ class _MySplashScreenState extends State<MySplashScreen>
     _scale2Controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
 
-    _scale2Animation = Tween<double>(begin: 1.0, end: 32.0)
-        .animate(_scale2Controller)
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          Navigator.push(context,
-              PageTransition(type: PageTransitionType.fade, child: HomePage()));
-        }
-      });
+    _scale2Animation =
+        Tween<double>(begin: 1.0, end: 32.0).animate(_scale2Controller)
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.fade, child: HomeScren()));
+            }
+          });
   }
 
   @override

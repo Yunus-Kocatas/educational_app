@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_design/home_page.dart';
+import 'package:flutter_design/Login/show_dialog.dart';
 import 'package:flutter_design/models/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'home_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -145,7 +147,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       obscureText: true,
       controller: confirmPasswordNameEditingController,
       validator: (value) {
-        if (confirmPasswordNameEditingController.text.length !=
+        if (confirmPasswordNameEditingController.text !=
             passwordNameEditingController.text) {
           return 'password dont match';
         }
@@ -174,6 +176,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
+          showLoaderDialog1(context);
           signUp(emailNameEditingController.text,
               passwordNameEditingController.text);
         },
@@ -288,7 +291,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => HomeScren(),
         ),
         (route) => false);
   }
