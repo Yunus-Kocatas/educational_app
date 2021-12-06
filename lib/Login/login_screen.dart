@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_design/Login/splash_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import '../home_page.dart';
 import 'registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -185,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
             (uid) => {
               Fluttertoast.showToast(msg: 'Login Succesuful'),
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => HomePage(),
+                builder: (context) => MySplashScreen(),
               ))
             },
           )
