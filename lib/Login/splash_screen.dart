@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_design/Login/home_screen.dart';
+import 'package:flutter_design/Login/login_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Animations/FadeAnimation.dart';
@@ -77,7 +77,7 @@ class _MySplashScreenState extends State<MySplashScreen>
               Navigator.push(
                   context,
                   PageTransition(
-                      type: PageTransitionType.fade, child: HomeScren()));
+                      type: PageTransitionType.fade, child: LoginScreen()));
             }
           });
   }

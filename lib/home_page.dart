@@ -29,12 +29,11 @@ class HomePage extends StatelessWidget {
                     width: 56,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: NetworkImage("https://unsplash.com/photos/Y7C7F26fzZM/download?force=true&w=640"),
-                            fit: BoxFit.cover
-                        ),
+                            image: NetworkImage(
+                                "https://unsplash.com/photos/Y7C7F26fzZM/download?force=true&w=640"),
+                            fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(36),
-                        border: Border.all(width: 2.0,color: Colors.white)
-                    ),
+                        border: Border.all(width: 2.0, color: Colors.white)),
                   ),
                   SizedBox(
                     width: 16,
@@ -86,10 +85,16 @@ class HomePage extends StatelessWidget {
                         height: 232,
                         margin: EdgeInsets.only(top: 16),
                         child: PageView(
-                          controller: PageController(viewportFraction: 0.8,initialPage: 2),
-                          children:topCoursesList.map((e) {
+                          controller: PageController(
+                              viewportFraction: 0.8, initialPage: 2),
+                          children: topCoursesList.map((e) {
                             return GestureDetector(
-                              onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (ctx)=>DetailsPage(val: e,))),
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => DetailsPage(
+                                            val: e,
+                                          ))),
                               child: CourseCard(
                                 color: e["color"],
                                 teacher: e["teacher"],

@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_design/Login/home_screen.dart';
 import 'package:flutter_design/Login/show_dialog.dart';
-import 'package:flutter_design/Login/splash_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'registration_screen.dart';
@@ -97,8 +97,6 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          showLoaderDialog1(context);
-
           /// asagida pushReplacement kullandik cunku home secreen e gittigimizde geri donus butonunun olmasini istemiyoruz.
           signIn(emailController.text, passwordController.text);
         },
@@ -187,8 +185,9 @@ class _LoginScreenState extends State<LoginScreen> {
           .then(
             (uid) => {
               Fluttertoast.showToast(msg: 'Login Succesuful'),
+              showLoaderDialog1(context),
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => MySplashScreen(),
+                builder: (context) => HomeScren(),
               ))
             },
           )

@@ -176,7 +176,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          showLoaderDialog1(context);
           signUp(emailNameEditingController.text,
               passwordNameEditingController.text);
         },
@@ -259,6 +258,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   void signUp(String email, String password) async {
     if (_formKey.currentState.validate()) {
+      showLoaderDialog1(context);
+
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((value) => {postDetailtoFireStore()})

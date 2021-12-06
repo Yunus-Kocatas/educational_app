@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-showLoaderDialog1(BuildContext context) {
+showLoaderDialog1(BuildContext context) async {
   AlertDialog alert = AlertDialog(
     content: new Row(
       children: [
-        CircularProgressIndicator(),
+        CircularProgressIndicator(
+          color: Colors.red,
+        ),
         Container(margin: EdgeInsets.only(left: 7), child: Text("Loading...")),
       ],
     ),
